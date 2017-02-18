@@ -13,4 +13,3 @@ def calcDistance():
 
 	print("Distance between points: ", distance(x1, x2, y1, y2))
 
-calcDistance()
