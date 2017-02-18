@@ -1,4 +1,5 @@
 import sys
+from emailVerifier import emailVerifier
 
 def printOptions():
     print("1) BMI Calculator")
@@ -10,17 +11,17 @@ def printOptions():
 
 def select(choice):
     if choice == 1:
-        pass
-        #bmi()
+        bmiCalculator()
+        
     elif choice == 2:
-        pass
-        #retirement()
+        retirement()
+        
     elif choice == 3:
-        pass
-        #distance()
+        distanceFormula()
+        
     elif choice == 4:
-        pass
-        #email()
+        print(emailVerifier(input("Enter email to be checked: ")))
+        
     elif choice == 5:
         sys.exit(1)
 
@@ -39,6 +40,7 @@ def main():
                 print("Error, select option 1-5 \n")
 
         
+        print()
         select(choice)
         print()
     
