@@ -1,5 +1,6 @@
 import sys
 from emailVerifier import emailVerifier
+from distanceForm import calcDistance, distance
 
 def printOptions():
     print("1) BMI Calculator")
@@ -17,10 +18,13 @@ def select(choice):
         retirement()
         
     elif choice == 3:
-        distanceFormula()
+        calcDistance()
         
     elif choice == 4:
-        print(emailVerifier(input("Enter email to be checked: ")))
+        if emailVerifier(input("Enter email to be checked: ")):
+            print("Valid Email")
+        else:
+            print("Invalid Email")
         
     elif choice == 5:
         sys.exit(1)
