@@ -12,7 +12,4 @@ def calcDistance():
 	y2 = float(input("Enter y2: "))
 
 	print("Distance between points: ", distance(x1, x2, y1, y2))
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
