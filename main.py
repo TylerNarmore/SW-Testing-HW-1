@@ -1,6 +1,10 @@
 import sys
 from emailVerifier import emailVerifier
+<<<<<<< HEAD
 from distanceForm import calcDistance, distance
+=======
+from distanceForm import calcDistance
+>>>>>>> origin/master
 
 def printOptions():
     print("1) BMI Calculator")
