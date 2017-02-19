@@ -17,7 +17,12 @@ def select(choice):
         bmiCalculator()
         
     elif choice == 2:
-        retirement()
+        age,salary,savings,goal = retirementInput()
+        futureAge=retirement(age,salary,savings,goal)
+        if futureAge=0:
+            print("You can not achieve that goal in your lifetime.")
+        else:
+            print("You will be",futureAge,"when your goal is met.")
         
     elif choice == 3:
         calcDistance()
