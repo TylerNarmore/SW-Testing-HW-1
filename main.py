@@ -19,7 +19,7 @@ def select(choice):
     elif choice == 2:
         age,salary,savings,goal = retirementInput()
         futureAge=retirement(age,salary,savings,goal)
-        if futureAge=0:
+        if futureAge==0:
             print("You can not achieve that goal in your lifetime.")
         else:
             print("You will be",futureAge,"when your goal is met.")
