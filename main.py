@@ -1,6 +1,6 @@
 import sys
 from emailVerifier import emailVerifier
-from distanceForm import calcDistance, distance
+from distanceForm import distance
 
 
 
@@ -25,7 +25,12 @@ def select(choice):
             print("You will be",futureAge,"when your goal is met.")
         
     elif choice == 3:
-        calcDistance()
+        x1 = float(input("Enter x1: "))
+		y1 = float(input("Enter y1: "))
+		x2 = float(input("Enter x2: "))
+		y2 = float(input("Enter y2: "))
+
+		print("Distance between points: ", distance(x1, x2, y1, y2))
         
     elif choice == 4:
         if emailVerifier(input("Enter email to be checked: ")):
