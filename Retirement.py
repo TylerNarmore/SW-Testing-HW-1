@@ -21,8 +21,8 @@ def retirementInput():
             print("Please enter a valid age 13 or older.")
             continue
         else:
-            if age<13:
-                print("Please enter an age above 12.")
+            if age<13 or age>100:
+                print("Please enter an age 13-100.")
                 continue
             else:
                 break
