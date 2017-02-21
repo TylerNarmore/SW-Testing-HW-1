@@ -1,4 +1,5 @@
 import pytest
+import mock
 from Retirement import *
 
 
@@ -14,6 +15,30 @@ class TestRetirement:
         assert (retirement(50,1000,.5,1000000/2))==0
 
     #A final test to check if the program calculates retirement correctly
-    def test_longer_saving_time(self):
-        assert (retirement(13,50000,.20,500000/2))==38
+    def test_age_input(self):
+        with mock.patch('builtins.input', side_effect =
+                        ['a','12','13','100000','10','5000']):
+            age,salary,savings,goal = retirementInput()
+            assert age == 13
+            assert (retirement(age,salary,savings,goal))==13
 
+    def test_salary_input(self):
+        with mock.patch('builtins.input', side_effect =
+                        ['15','a','-500','10000','20','5000']):
+            age,salary, savings, goal = retirementInput()
+            assert salary == 10000
+            assert (retirement(age,salary,savings,goal))==16
+            
+    def test_savings_input(self):
+        with mock.patch('builtins.input',side_effect =
+                        ['20','100000','k','-5','1000','20','20000']):
+            age,salary,savings,goal = retirementInput()
+            assert savings == .2
+            assert (retirement(age,salary,savings,goal)) == 20
+        
+    def test_goal_input(self):
+        with mock.patch('builtins.input', side_effect =
+                        ['25','500000','5','no goal','-500','1000000']):
+            age, salary, savings, goal = retirementInput()
+            assert goal == 500000
+            assert (retirement(age,salary,savings,goal)) == 45
