@@ -2,7 +2,7 @@ import sys
 from emailVerifier import emailVerifier
 from distanceForm import distance
 from Retirement import *
-
+from bmiCalculator import bodyMassIndex
 
 def printOptions():
     print("1) BMI Calculator")
@@ -14,7 +14,9 @@ def printOptions():
 
 def select(choice):
     if choice == 1:
-        bmiCalculator()
+        print("Enter your height in feet and inches")
+        bmi = bodyMassIndex()
+        print(bmi.index())
         
     elif choice == 2:
         age,salary,savings,goal = retirementInput()
