@@ -11,7 +11,6 @@ def printOptions():
     print("4) Email Verifier")
     print("5) Exit")
 
-
 def select(choice):
     if choice == 1:
         print("Enter your height in feet and inches")
@@ -38,9 +37,6 @@ def select(choice):
             print("Distance between points: ", distance(x1, y1, x2, y2))
         except ValueError:
             print("Valid Numbers Only")
-
-
-
         
     elif choice == 4:
         if emailVerifier(input("Enter email to be checked: ")):
