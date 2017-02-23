@@ -15,7 +15,10 @@ def printOptions():
 def select(choice):
     if choice == 1:
         print("Enter your height in feet and inches")
-        bmi = bodyMassIndex()
+        feet = float(input("Feet: "))
+        inches = float(input("Inches: "))
+        weight = float(input("Enter your weight in pounds: "))
+        bmi = bodyMassIndex(feet,inches,weight)
         print(bmi.index())
         
     elif choice == 2:
