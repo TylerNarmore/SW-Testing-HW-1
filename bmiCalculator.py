@@ -1,12 +1,9 @@
 import math
 
 class bodyMassIndex:
-    def __init__(self):
+    def __init__(self, feet, inches, weight):
         while True:
             try:
-                feet = float(input("Feet: "))
-                inches = float(input("Inches: "))
-                weight = float(input("Enter your weight in pounds: "))
                 self.feet = feet * 12.0
                 self.inches = inches
                 self.weight = weight * .45
