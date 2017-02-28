@@ -17,7 +17,7 @@ def retirementInput():
     while True:
         try:
             age = int(input("Enter your current age:\n"))
-        except ValueError or age<13:
+        except ValueError:
             print("Please enter a valid age 13 or older.")
             continue
         else:
