@@ -1,44 +1,59 @@
 #Author: Brandon Stone
 
-#Calculates the BMI
-def bodyMassIndex(feet,inches,weight):
-    if feet<2 or weight<30 or weight>600 or inches<0:
-        return 0
-    else:
-        height = float(((feet*12) + inches) * .025)
-        bmi = (weight * .45) / (height ** 2)
-        return float(format(bmi, '.2f'))
-
-#Gets input from the user and decides their BMI category
-def index():
+#Calculates the BMI and decides their BMI category
+def bodyMassIndex():
     while True:
         try:
             print("Enter your Height in Ft and In and your Weight in Pounds.")
-            feet = float(input("Feet: "))
-            inches = float(input("Inches: "))
-            weight = float(input("Weight:  "))
+            feet = int(input("Feet: "))
         except ValueError:
-            print("Please enter valid inputs integers.")
+            print("Please enter valid integers.")
             continue
         else:
-            if feet < 2:
-                print("Please enter feet above 2.")
-                continue
-            elif inches < 0:
-                print("Please enter inches above 0.")
-            elif weight < 30 or weight > 600:
-                print("Enter weight that is between 30 and 600.")
+            if feet < 2 or feet > 9:
+                print("Please enter feet within 2 and 8.")
                 continue
             else:
+                feet*=12
                 break
 
-    bmi = bodyMassIndex(feet,inches,weight)
+    while True:
+        try:
+            inches = int(input("Inches: "))
+        except ValueError:
+            print("Please enter valid integers.")
+            continue
+        else:
+            if inches < 0 or inches > 11:
+                print("Please enter inches within 0 and 11.")
+                continue
+            else:
+                height = (feet + inches) * .025
+                break
+
+    while True:
+        try:
+            weight = int(input("Weight: "))
+        except ValueError:
+            print("Please enter valid integers.")
+            continue
+        else:
+            if weight < 30 or weight > 600:
+                print("Please enter weight within 30 and 600.")
+                continue
+            else:
+                weight*=.45
+                break
+
+    bmi = round(float((weight)/(height**2)),2)
     
     if bmi < 18.5:
-        return "BMI: " + str(bmi) + " Category: Underweight"
-    elif bmi >= 18.5 and bmi <= 24.9:
-        return "BMI: " + str(bmi) + " Category: Normal Weight"
-    elif bmi >= 25 and bmi <= 29.9:
-        return "BMI: " + str(bmi) + " Category: Overweight"
+        cate = "Underweight"
+    elif 18.5 <= bmi <= 24.9:
+        cate = "Normal Weight"
+    elif 25 <= bmi <= 29.9:
+        cate = "Overweight"
     elif bmi >= 30:
-        return "BMI: " + str(bmi) + " Category: Obese"
+        cate = "Obese"
+
+    return bmi, cate   

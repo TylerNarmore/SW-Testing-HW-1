@@ -14,7 +14,8 @@ def printOptions():
 
 def select(choice):
     if choice == 1:
-        print(index())
+        bmi,cate = bodyMassIndex()
+        print("BMI: ",bmi," Category: ",cate)
         
     elif choice == 2:
         age,salary,savings,goal = retirementInput()
