@@ -1,25 +1,26 @@
 from menu import *
-import warnings
 import pytest
 import mock
 
 
 class TestMain:
-    def test_Menu_Empty_Input(self):
+    def test_Menu_Empty_Input(self,capfd):
         with pytest.raises(SystemExit):
-            with pytest.warns(UserWarning) as record:
-                with mock.patch('builtins.input', side_effect =
-                                ['','5']):
-                    main()
-        assert len(record) == 1
+            with mock.patch('builtins.input', side_effect =
+                            ['','5']):
+                main()
+        out,err = capfd.readouterr()
+        assert "Error, select option 1-5" in out
 
-    def test_Menu_Invalid_Input(self):
+
+    def test_Menu_Invalid_Input(self,capfd):
         with pytest.raises(SystemExit):
-            with pytest.warns(UserWarning) as record:
-                with mock.patch('builtins.input', side_effect =
-                                ['a','5']):
-                    main()
-        assert len(record) == 1
+           
+            with mock.patch('builtins.input', side_effect =
+                            ['a','5']):
+                main()
+        out,err = capfd.readouterr()
+        assert "Error, select option 1-5" in out
 
     def test_Valid_Option_1(self):
         with pytest.raises(SystemExit):
@@ -37,5 +38,7 @@ class TestMain:
         with pytest.raises(SystemExit):
             with mock.patch('builtins.input', side_effect =
                             ['2','20','100000','.10','50000','5']):
-                test = main() == 0
+                main()
+    
                 
+
