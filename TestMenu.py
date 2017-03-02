@@ -38,7 +38,7 @@ class TestMain:
     def test_Option_2(self):
         with pytest.raises(SystemExit):
             with mock.patch('builtins.input', side_effect =
-                            ['2','20','100000','.10','50000','5']):
+                            ['2','20','100000','10','50000','5']):
                 main()
                 
     def test_Option_2_Not_Able(self):
