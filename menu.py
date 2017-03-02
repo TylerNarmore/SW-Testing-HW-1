@@ -5,6 +5,7 @@ from distanceForm import distance
 from Retirement import *
 from bmiCalculator import *
 
+#Prints menu options
 def printOptions():
     print("1) BMI Calculator")
     print("2) Retirement Calculator")
@@ -12,6 +13,8 @@ def printOptions():
     print("4) Email Verifier")
     print("5) Exit")
 
+
+#Calls functions based on choice
 def select(choice):
     if choice == 1:
         bmi,cate = bodyMassIndex()
@@ -33,7 +36,7 @@ def select(choice):
             y2 = float(input("Enter y2: "))
             print("Distance between points: ", distance(x1, y1, x2, y2))
         except ValueError:
-            warnings.warn("Valid Numbers Only",UserWarning)
+            print("Valid Numbers Only")
         
     elif choice == 4:
         if emailVerifier(input("Enter email to be checked: ")):
@@ -45,7 +48,6 @@ def select(choice):
         sys.exit(1)
 
 def main():
-
     while 1:
         cond = True
         printOptions()
@@ -53,12 +55,11 @@ def main():
             try:
                 choice = int(input("Select an option(1-5): "))
                 if choice not in [1,2,3,4,5]:
-                    warnings.warn("Error, select option 1-5 \n",UserWarning)
-                    invalid = True
+                    print("Error, select option 1-5")
                 else:
                     cond = False
             except:
-                warnings.warn("Error, select option 1-5 \n",UserWarning)
+                print("Error, select option 1-5")
 
 
         
