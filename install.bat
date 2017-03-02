@@ -1,0 +1,1 @@
+start cmd /k pip install pytest & /k pip install pytest-cov & /k pip install mock
