@@ -1,3 +1,5 @@
+#Author: Josh Possel
+
 import sys
 import math
 

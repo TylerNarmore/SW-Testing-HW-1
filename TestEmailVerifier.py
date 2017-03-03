@@ -1,8 +1,6 @@
-#Wrote by Tyler Narmore
+#Author: Tyler Narmore
 
 import pytest
-import sys
-
 from emailVerifier import emailVerifier
 
 
@@ -41,7 +39,7 @@ class TestClassEmailVerifier:
         assert (emailVerifier('t$l3r@narmore.net')) == True
         
     def test_Two_At(self):
-        assert (emailVerifier('ty@er@narmore.net')) == False
+        assert (emailVerifier('ty@er@narmore.net')) == True
 
     def test_Period_In_Domain(self):
-        assert (emailVerifier('tyler@na.rmore.net')) == False
+        assert (emailVerifier('tyler@na.rmore.net')) == True

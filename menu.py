@@ -4,9 +4,12 @@ from emailVerifier import emailVerifier
 from distanceForm import distance
 from Retirement import *
 from bmiCalculator import *
+import subprocess as sp
 
 #Prints menu options
 def printOptions():
+
+    sp.call('cls',shell=True)
     print("1) BMI Calculator")
     print("2) Retirement Calculator")
     print("3) Distance Formula")
@@ -19,6 +22,7 @@ def select(choice):
     if choice == 1:
         bmi,cate = bodyMassIndex()
         print("BMI: ",bmi," Category: ",cate)
+        input("Press enter to continue")
         
     elif choice == 2:
         age,salary,savings,goal = retirementInput()
@@ -27,6 +31,7 @@ def select(choice):
             print("You can not achieve that goal in your lifetime.")
         else:
             print("You will be",futureAge,"when your goal is met.")
+        input("Press enter to continue")
         
     elif choice == 3:
         try:
@@ -37,12 +42,14 @@ def select(choice):
             print("Distance between points: ", distance(x1, y1, x2, y2))
         except ValueError:
             print("Valid Numbers Only")
+        input("Press enter to continue")
         
     elif choice == 4:
         if emailVerifier(input("Enter email to be checked: ")):
             print("Valid Email")
         else:
             print("Invalid Email")
+        input("Press enter to continue")
         
     elif choice == 5:
         sys.exit(1)

@@ -11,10 +11,10 @@ The team built an application that runs four different functions to understand T
 ## Setup and Use Instructions
 1. Make sure Python 3.5.2, Pytest, Pytest Coverage, and Mock is installed.
   * [Python 3.5.2](https://www.python.org/downloads/release/python-352/)
-  * Pytest - ```pip install -U pytest```
-  * Mock - ```pip install -U mock==dev```
+  * Pytest - ```pip install pytest```
+  * Mock - ```pip install mock```
   * Coverage - ```pip install pytest-cov```
 2. Clone the Repo.
   * ```git clone https://github.com/TylerNarmore/SW-Testing-HW-1.git master```
-3. Run ```main.py``` to run the applictaion.
-4. Run ```TestMenu.py``` and the other tests to test the application.
+3. Run ```RUN.py``` to run the applictaion.
+4. Run ```RunTest.bat``` and the other tests to test the application.

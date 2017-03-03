@@ -1,4 +1,4 @@
-#Wrote by Tyler Narmore
+#Author: Tyler Narmore
 import re
 
 def emailVerifier(email):
@@ -24,13 +24,8 @@ def emailVerifier(email):
     elif re.search('[()\/\]\[{}]', email) != None:
         return False
 
-    #@ in username
-    elif re.search('^.*@+.*@.*$',email) != None:
-        return False
+  
 
-    #. in domain name
-    elif re.search('@.*\.+.*\.',email) != None:
-        return False
     
     else:
         return True

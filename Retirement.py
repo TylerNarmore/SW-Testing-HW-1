@@ -1,3 +1,5 @@
+#Author: Brannon Jordan
+
 def retirement(age, salary, savings, goal):
 
     #calculates the years needed until the goal is met
